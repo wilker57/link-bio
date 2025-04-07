@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wilker Costa | Link Bio</title>
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
     body {
@@ -23,18 +25,26 @@
       border: 2px solid #58a6ff;
       margin-bottom: 1rem;
     }
-    h1 {
-      font-size: 1.5rem;
-      margin-bottom: 0.2rem;
+    .profile-img:hover {
+      transform: scale(1.1);
+      transition: 0.3s;
     }
-    p {
+    h1, p {
       margin: 0.3rem 0;
-      font-size: 1rem;
-      color: #8b949e;
       text-align: center;
     }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 1rem;
+      color: #8b949e;
+    }
     .links a {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background-color: #161b22;
       color: #58a6ff;
       padding: 0.8rem 1rem;
@@ -46,28 +56,63 @@
       width: 100%;
       max-width: 300px;
       text-align: center;
-      position: relative;
     }
     .links a:hover {
       background-color: #21262d;
+      transform: scale(1.05);
+    }
+    .links i {
+      margin-right: 0.5rem;
+    }
+    footer .social-icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    footer .social-icons a {
+      color: #58a6ff;
+      font-size: 1.5rem;
+      transition: 0.3s;
+    }
+    footer .social-icons a:hover {
+      color: #c9d1d9;
     }
   </style>
 </head>
 <body>
-  <img src="logo.png" alt="Foto de perfil" class="profile-img" id="profile-img" />
+  <img src="logo.png" alt="Foto de perfil" class="profile-img" id="profile-img" onerror="this.src='https://via.placeholder.com/120';"/>
   <h1 id="title">Wilker Costa</h1>
   <p id="description-1">Desenvolvedor Java | Soluções Web</p>
   <p id="description-2">Aberto a conexões, parcerias e projetos</p>
 
   <div class="links">
-    <a href="https://github.com/wilker57/link-bio" target="_blank" id="github-link">GitHub</a>
-    <a href="https://www.linkedin.com/in/dev-wilkercosta" target="_blank" id="linkedin-link">LinkedIn</a>
-    <a href="mailto:wilker57@gmail.com" id="email-link">E-mail</a>
-    <a href="https://wa.me/556598129996" target="_blank" id="whatsapp-link">WhatsApp</a>
+    <a href="https://github.com/wilker57/link-bio" target="_blank" id="github-link"><i class="fab fa-github"></i> GitHub</a>
+    <a href="https://www.linkedin.com/in/dev-wilkercosta" target="_blank" id="linkedin-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="mailto:wilker57@gmail.com" id="email-link"><i class="fas fa-envelope"></i> E-mail</a>
+    <a href="https://wa.me/556598129996" target="_blank" id="whatsapp-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
   </div>
 
   <footer class="text-center py-4" id="footer">
-    <p>Wilker&copy; 2025 - Todos os direitos reservados.</p>
+    
+    <div class="social-icons">
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://telegram.org" target="_blank"><i class="fab fa-telegram"></i></a>
+      <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://pinterest.com" target="_blank"><i class="fab fa-pinterest"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://spotify.com" target="_blank"><i class="fab fa-spotify"></i></a>
+      <a href="https://reddit.com" target="_blank"><i class="fab fa-reddit"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://skype.com" target="_blank"><i class="fab fa-skype"></i></a>
+      <a href="https://google.com" target="_blank"><i class="fab fa-google"></i></a>
+    </div>
+
+	<p>Wilker&copy; 2025 - Todos os direitos reservados.</p>
+
   </footer>
 
   <script>
