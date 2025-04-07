@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wilker Costa | Link Bio</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
     body {
       background: #0d1117;
@@ -46,6 +46,7 @@
       width: 100%;
       max-width: 300px;
       text-align: center;
+      position: relative;
     }
     .links a:hover {
       background-color: #21262d;
@@ -53,20 +54,36 @@
   </style>
 </head>
 <body>
-  <img src="logo.png" alt="Foto de perfil" class="profile-img" />
-  <h1>Wilker Costa</h1>
-  <p>Desenvolvedor Java | Soluções Web</p>
-  <p>Aberto a conexões, parcerias e projetos</p>
+  <img src="logo.png" alt="Foto de perfil" class="profile-img" id="profile-img" />
+  <h1 id="title">Wilker Costa</h1>
+  <p id="description-1">Desenvolvedor Java | Soluções Web</p>
+  <p id="description-2">Aberto a conexões, parcerias e projetos</p>
 
   <div class="links">
-    <a href="https://github.com/wilker57/link-bio" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/dev-wilkercosta" target="_blank">LinkedIn</a>
-    <a href="mailto:wilker57@gmail.com">E-mail</a>
-    <a href="https://wa.me/556598129996" target="_blank">Fale comigo no WhatsApp</a>
+    <a href="https://github.com/wilker57/link-bio" target="_blank" id="github-link">GitHub</a>
+    <a href="https://www.linkedin.com/in/dev-wilkercosta" target="_blank" id="linkedin-link">LinkedIn</a>
+    <a href="mailto:wilker57@gmail.com" id="email-link">E-mail</a>
+    <a href="https://wa.me/556598129996" target="_blank" id="whatsapp-link">WhatsApp</a>
   </div>
 
-  <footer class="bg-white text-black text-center py-4">
-        <p>wilker&copy; 2025 - Todos os direitos reservados.</p>
+  <footer class="text-center py-4" id="footer">
+    <p>Wilker&copy; 2025 - Todos os direitos reservados.</p>
+  </footer>
 
+  <script>
+    $(document).ready(function() {
+      // Efeito fadeIn ao carregar a página
+      $("#profile-img, #title, #description-1, #description-2, #footer").hide().fadeIn(2000);
+
+      // Efeito fadeOut ao clicar nos links
+      $(".links a").click(function(event) {
+        event.preventDefault(); // Impede o redirecionamento imediato
+        let link = $(this).attr("href");
+        $("body").fadeOut(1000, function() { // FadeOut no body antes de redirecionar
+          window.location.href = link; // Redireciona após o efeito
+        });
+      });
+    });
+  </script>
 </body>
 </html>
